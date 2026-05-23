@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.5" name="viewport"/>
+<title>TMU Integrated Health Centre – Student wellbeing, grounded in care.</title>
+<meta content="Integrated health services for TMU students: primary care, mental health support, wellness programs, and health promotion. Located at 350 Victoria St, Toronto." name="description"/>
+<meta content="TMU Integrated Health Centre – Student wellbeing, grounded in care." property="og:title"/>
+<meta content="Integrated health services for TMU students: primary care, mental health support, wellness programs, and health promotion." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="TMU Integrated Health Centre – Student wellbeing, grounded in care." name="twitter:title"/>
+<meta content="Integrated health services for TMU students: primary care, mental health support, wellness programs, and health promotion." name="twitter:description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --primary: #2C5F2D;
+      --secondary: #97BC62;
+      --accent: #D4A373;
+      --text: #1A1A1A;
+      --background: #F9F9F5;
+      --muted: #E8EDE0;
+      --shadow: 0 12px 28px -8px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.02);
+      --radius: 24px;
+      --max-width: 1200px;
+      --font-heading: 'Lora', Georgia, serif;
+      --font-body: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--primary); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.75; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+    
+    .identity-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(249,249,245,0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(44,95,45,0.08);
+      padding: 12px 0;
+    }
+    .identity-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .identity-bar .org-name {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+    }
+    .identity-bar .org-name small {
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #4a6b4a;
+      display: block;
+      margin-top: 2px;
+    }
+    .identity-bar .skip-link {
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border: 1px solid var(--primary);
+      border-radius: 40px;
+      color: var(--primary);
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .identity-bar .skip-link:hover {
+      background: var(--primary);
+      color: white;
+      opacity: 1;
+    }
+
+    
+    .proof-strip {
+      background: var(--muted);
+      padding: 10px 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(44,95,45,0.1);
+    }
+    .proof-strip .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: center;
+      justify-content: center;
+    }
+    .proof-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #2b4a2b;
+    }
+    .proof-strip .badge {
+      background: var(--primary);
+      color: white;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .proof-strip a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: stretch;
+      background: var(--background);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .hero-text {
+      flex: 1 1 50%;
+      padding: 60px 40px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-text .container {
+      max-width: 540px;
+      margin: 0 0 0 auto;
+      padding: 0;
+    }
+    .hero-text h1 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #2d3d2d;
+      max-width: 480px;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: transparent;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(44,95,45,0.2);
+    }
+    .btn-primary:hover {
+      background: #1f4520;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(44,95,45,0.25);
+      opacity: 1;
+    }
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      opacity: 1;
+    }
+    .hero-image {
+      flex: 1 1 50%;
+      min-height: 50vh;
+      background: var(--muted);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(44,95,45,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    
+    section { padding: 80px 0; }
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 1.1rem;
+      color: #3d4d3d;
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-image {
+      flex: 1 1 45%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--muted);
+    }
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .about-text {
+      flex: 1 1 45%;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #2a3a2a;
+    }
+    .about-text .address-line {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(44,95,45,0.06);
+      transition: transform 0.2s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(44,95,45,0.15);
+    }
+    .service-card .icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+      color: var(--secondary);
+    }
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      color: #3e4e3e;
+      font-size: 0.95rem;
+    }
+
+    
+    .why-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      background: var(--muted);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+    }
+    .why-item {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .why-item .icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .why-item h4 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .why-item p {
+      font-size: 0.95rem;
+      color: #3a4a3a;
+    }
+
+    
+    .area-banner {
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .area-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 20px, transparent 20px, transparent 40px);
+      pointer-events: none;
+    }
+    .area-banner h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .area-banner p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .gallery-grid figure {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background: var(--muted);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 3;
+    }
+    .gallery-grid figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-grid figure:hover img {
+      transform: scale(1.03);
+    }
+    .gallery-grid figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      color: white;
+      padding: 20px 12px 10px;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-grid figure:hover figcaption {
+      opacity: 1;
+    }
+    .gallery-grid figure:first-child {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      aspect-ratio: auto;
+    }
+
+    
+    .contact-section {
+      background: var(--muted);
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 60px 0;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-info {
+      flex: 1 1 300px;
+    }
+    .contact-info h3 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .contact-info a {
+      font-weight: 500;
+    }
+    .contact-form {
+      flex: 1 1 300px;
+    }
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+      color: #2a3a2a;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #c8d4c8;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: white;
+      margin-bottom: 16px;
+      transition: border 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-form .btn-primary { width: 100%; }
+
+    
+    .site-footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.85);
+      padding: 32px 0;
+      font-size: 0.9rem;
+    }
+    .site-footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .site-footer a {
+      color: #d4e0d4;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .site-footer .attribution {
+      opacity: 0.7;
+      font-size: 0.8rem;
+    }
+
+    
+    .next-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 24px 0;
+    }
+    .step {
+      flex: 1 1 180px;
+      background: white;
+      border-radius: 20px;
+      padding: 24px 16px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      border: 1px solid rgba(44,95,45,0.06);
+    }
+    .step .num {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 40px;
+      background: var(--secondary);
+      color: white;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .step h4 { font-family: var(--font-heading); color: var(--primary); margin-bottom: 6px; }
+    .step p { font-size: 0.9rem; color: #3d4d3d; }
+
+    
+    @media (max-width: 768px) {
+      .hero-text { padding: 40px 20px; }
+      .hero-image { clip-path: none; min-height: 40vh; }
+      .hero-inner { flex-direction: column-reverse; }
+      .about-image img { height: 260px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid figure:first-child { grid-column: auto; grid-row: auto; }
+      .why-row { padding: 32px 16px; }
+      .identity-bar .org-name { font-size: 0.95rem; }
+      .identity-bar .skip-link { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 2rem; }
+      .section-title { font-size: 1.6rem; }
+    }
+
+    
+    .texture-leaf {
+      position: relative;
+    }
+    .texture-leaf::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 10 Q40 20 30 30 Q20 20 30 10' fill='none' stroke='%232C5F2D' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .texture-leaf > * { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+<header class="identity-bar">
+<div class="container">
+<div class="org-name">
+      TMU Integrated Health Centre
+      <small>Student wellbeing, grounded in care.</small>
+</div>
+<a class="skip-link" href="#contact-details">contact &amp; details</a>
+</div>
+</header>
+<div class="proof-strip">
+<div class="container">
+<span>📍 Toronto, ON</span>
+<span class="badge">student health service</span>
+<span><a href="https://www.torontomu.ca/student-wellbeing/" rel="noopener" target="_blank">torontomu.ca/student-wellbeing</a></span>
+<span>serving TMU students</span>
+</div>
+</div>
+<section class="hero" id="hero">
+<div class="hero-inner">
+<div class="hero-text">
+<div class="container">
+<h1>Your Health.<br/>Your Campus.</h1>
+<p>Integrated health services for TMU students, right where you study.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#services">Explore Our Services</a>
+<a class="btn btn-outline" href="https://www.torontomu.ca/student-wellbeing/" rel="noopener" target="_blank">View Campus Wellbeing</a>
+</div>
+</div>
+</div>
+<div class="hero-image">
+<img alt="University campus entrance with greenery" height="800" loading="eager" src="https://images.pexels.com/photos/31039051/pexels-photo-31039051.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+</div>
+</div>
+</section>
+<section class="container texture-leaf" id="about">
+<div class="about-grid">
+<div class="about-image">
+<img alt="Student talking with doctor in bright office" height="800" loading="lazy" src="https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+</div>
+<div class="about-text">
+<h2 class="section-title">About the centre</h2>
+<p>The TMU Integrated Health Centre is part of Toronto Metropolitan University’s student wellbeing services, offering primary care, mental health support, and wellness programs tailored to the student community. Located at 350 Victoria Street, the centre provides a welcoming space for students to access healthcare on campus.</p>
+<p class="address-line">📍 350 Victoria St, Toronto, ON</p>
+</div>
+</div>
+</section>
+<section class="container" id="services">
+<h2 class="section-title">Support paths</h2>
+<p class="section-sub">Four service pathways designed around student life.</p>
+<div class="services-grid">
+<div class="service-card">
+<span class="icon">🩺</span>
+<h3>Primary Care</h3>
+<p>Confidential medical consultations with healthcare professionals.</p>
+</div>
+<div class="service-card">
+<span class="icon">🧠</span>
+<h3>Mental Health Support</h3>
+<p>Counseling and wellness resources for students.</p>
+</div>
+<div class="service-card">
+<span class="icon">🌱</span>
+<h3>Health Promotion</h3>
+<p>Workshops and programs to support healthy living.</p>
+</div>
+<div class="service-card">
+<span class="icon">🧘</span>
+<h3>Wellness Programs</h3>
+<p>Group activities and self-care initiatives.</p>
+</div>
+</div>
+</section>
+<section class="container">
+<h2 class="section-title">Why this centre</h2>
+<div class="why-row">
+<div class="why-item">
+<div class="icon">📍</div>
+<h4>On‑campus access</h4>
+<p>Conveniently located on campus for easy access between classes.</p>
+</div>
+<div class="why-item">
+<div class="icon">🔄</div>
+<h4>Integrated care</h4>
+<p>Integrated care approach addressing physical and mental health.</p>
+</div>
+<div class="why-item">
+<div class="icon">🔒</div>
+<h4>Student‑first</h4>
+<p>Confidential services designed with student needs in mind.</p>
+</div>
+</div>
+</section>
+<section class="container">
+<div class="area-banner">
+<h2>Service area</h2>
+<p>Services are available to currently registered TMU students.</p>
+</div>
+</section>
+<section class="container">
+<h2 class="section-title">Campus &amp; centre</h2>
+<div class="gallery-grid">
+<figure>
+<img alt="Medical consultation room" height="800" loading="lazy" src="https://images.pexels.com/photos/7578800/pexels-photo-7578800.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<figcaption>Primary care consultation room</figcaption>
+</figure>
+<figure>
+<img alt="Student in counseling room" height="800" loading="lazy" src="https://images.pexels.com/photos/6712685/pexels-photo-6712685.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<figcaption>Mental health support space</figcaption>
+</figure>
+<figure>
+<img alt="Students volunteering" height="800" loading="lazy" src="https://images.pexels.com/photos/6647027/pexels-photo-6647027.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<figcaption>Wellness workshop</figcaption>
+</figure>
+<figure>
+<img alt="Group packing donations" height="800" loading="lazy" src="https://images.pexels.com/photos/7156178/pexels-photo-7156178.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<figcaption>Health promotion event</figcaption>
+</figure>
+</div>
+</section>
+<section class="container">
+<h2 class="section-title">How to connect</h2>
+<div class="next-steps">
+<div class="step">
+<div class="num">1</div>
+<h4>Reach out</h4>
+<p>Use the contact form or call to tell us about your needs.</p>
+</div>
+<div class="step">
+<div class="num">2</div>
+<h4>We listen</h4>
+<p>We’ll ask about your situation and what kind of support you’re looking for.</p>
+</div>
+<div class="step">
+<div class="num">3</div>
+<h4>Next step</h4>
+<p>We confirm the best appointment or program pathway for you.</p>
+</div>
+</div>
+</section>
+<section class="contact-section" id="contact-details">
+<div class="container">
+<h2 class="section-title">Contact &amp; details</h2>
+<div class="contact-grid">
+<div class="contact-info">
+<h3>TMU Integrated Health Centre</h3>
+<p><strong>📍 Address:</strong> 350 Victoria St, Toronto, ON</p>
+<p><strong>📞 Phone:</strong> <a href="tel:+14169795070">(416) 979-5070</a></p>
+<p><strong>✉️ Email:</strong> <a href="mailto:medicalct@torontomu.ca">medicalct@torontomu.ca</a></p>
+<p style="margin-top:12px; font-size:0.9rem; opacity:0.8;">Part of Toronto Metropolitan University student wellbeing.</p>
+</div>
+<div class="contact-form">
+<form action="mailto:medicalct@torontomu.ca" enctype="text/plain" method="post">
+<label for="name">Your name</label>
+<input id="name" name="name" required="" type="text"/>
+<label for="message">What would you like to ask?</label>
+<textarea id="message" name="message" required=""></textarea>
+<button class="btn btn-primary" type="submit">Send message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="container">
+<div>
+<p>© <span id="year"></span> TMU Integrated Health Centre</p>
+<p class="attribution">
+        Photos: 
+        <a href="https://www.pexels.com/photo/university-campus-life-in-coral-gables-daylight-31039051/" rel="noopener" target="_blank">DΛVΞ GΛRCIΛ</a>, 
+        <a href="https://www.pexels.com/photo/a-doctor-talking-the-patient-7579831/" rel="noopener" target="_blank">cottonbro studio</a>, 
+        <a href="https://www.pexels.com/photo/a-woman-in-white-coat-sitting-at-the-table-7578800/" rel="noopener" target="_blank">cottonbro studio</a>, 
+        <a href="https://www.pexels.com/photo/a-man-sitting-on-a-chair-while-looking-at-a-woman-busy-using-her-cellphone-6712685/" rel="noopener" target="_blank">Pavel Danilyuk</a>, 
+        <a href="https://www.pexels.com/photo/two-men-wearing-white-volunteer-t-shirt-6647027/" rel="noopener" target="_blank">RDNE Stock project</a>, 
+        <a href="https://www.pexels.com/photo/people-packing-donations-7156178/" rel="noopener" target="_blank">Gustavo Fring</a>
+        &amp; internal placeholders.
+      </p>
+</div>
+<div>
+<a href="https://www.torontomu.ca/student-wellbeing/" rel="noopener" target="_blank">TMU Student Wellbeing</a>
+</div>
+</div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
